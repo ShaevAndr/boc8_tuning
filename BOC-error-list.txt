@@ -1,0 +1,121 @@
+typedef union {
+		struct {
+			uint32_t SDRAM_Test_Error:		1; // 0
+			uint32_t Reserv0:							4; // 1...4
+			uint32_t ADCCalirationError:	1;//5
+			uint32_t APSPIError:					1; // 6
+			uint32_t MonpRxError:					1; // 7
+			uint32_t Reserv2:							3; // 8...10
+			uint32_t IntVoltError:				1; // 11
+			uint32_t FSError:							1; // 12
+			uint32_t Reserv4:							19; // 13...31
+		} st;
+		uint32_t ui32;
+	} StatusBOC_t;
+	//--------------------------------------------------------------------------//
+	typedef union {
+		struct {
+			uint32_t ADC2_p3_3V_Min:	1; //0
+			uint32_t ADC2_p3_3V_AVG:	1; //1
+			uint32_t ADC2_p3_3V_Max:	1; //2
+			uint32_t Reserv1:					3; //3...5
+			uint32_t ADC2_p7V_Min:		1; //6
+			uint32_t ADC2_p7V_AVG:		1; //7
+			uint32_t ADC2_p7V_Max:		1; //8
+			uint32_t Reserv2:					9; //9...17
+			uint32_t Monp_Vcc_Min:		1; //18
+			uint32_t Monp_Vcc_AVG:		1; //19
+			uint32_t Monp_Vcc_Max:		1; //20
+			uint32_t Monp_3_3Vp_Min:	1; //21
+			uint32_t Monp_3_3Vp_AVG:	1; //22
+			uint32_t Monp_3_3Vp_Max:	1; //23
+			uint32_t Reserv0:					8; //24...31
+		} st;
+		uint32_t ui32;
+	} ErrorInterVolt_t;
+	//--------------------------------------------------------------------------//
+	typedef union {
+		struct {
+			uint32_t LoadSystemParamError:			1; // 0
+			uint32_t SaveSystemParamError:			1; // 1
+			uint32_t LoadUserParamError:				1; // 2
+			uint32_t SaveUserParamError:				1; // 3
+			uint32_t LoadDevUseStatParamError:	1; // 4
+			uint32_t SaveDevUseStatParamError:	1; // 5
+			uint32_t LoadTempStatParamError:		1; // 6
+			uint32_t SaveTempStatParamError:		1; // 7
+			uint32_t Reserv0:										24; //8...31
+		} st;
+		uint32_t ui32;
+	} ErrorLittleFS_t;
+	
+	typedef enum {
+		_CopmInput0Level1 = 0,
+		_CopmInput1Level1 = 1,
+		_CopmInput2Level1 = 2,
+		_CopmInput3Level1 = 3,
+		_CopmInput4Level1 = 4,
+		_CopmInput5Level1 = 5,
+		_CopmInput0Level2 = 6,
+		_CopmInput1Level2 = 7,
+		_CopmInput2Level2 = 8,
+		_CopmInput3Level2 = 9,
+		_CopmInput4Level2 = 10,
+		_CopmInput5Level2 = 11,
+	} Copmarator_t;
+	//--------------------------------------------------------------------------//
+	typedef union {
+		struct {
+			//uint32_t ErrorICP:			1;	//0
+//			uint32_t ErrorDIO:			1;	//1
+			uint32_t Reserv0:				2;	//0 - 1
+			uint32_t ErrorPowUin:		1;	//2
+			uint32_t ErrorDHCP:			1;	//3
+			//uint32_t ErrorSNTP:			1;	//4
+			uint32_t Reserv2:				1;	//4
+			uint32_t ErrorTemp:			1;	//5
+			uint32_t ErrorDIn:			1;	//6
+			uint32_t ErrorAIn:			1;	//7
+			//uint32_t ErrorSyncRS485:1;	//8
+			uint32_t ErrorEthLink:	1;	//9
+			//uint32_t ErrorFFTSync:	1;	//10
+			uint32_t Reserv1:				24;	//11...31
+		} st;
+		uint32_t ui32;
+	} Env_Status_t;
+	//--------------------------------------------------------------------------//
+	typedef union {
+		struct {
+			uint32_t ErrorAIn1:			1;	//0
+			uint32_t ErrorAIn2:			1;	//1
+			uint32_t ErrorAIn3:			1;	//2
+			uint32_t ErrorAIn4:			1;	//3
+			uint32_t ErrorAIn5:			1;	//4
+			uint32_t ErrorAIn6:			1;	//5
+			uint32_t Reserv0:				10;	//6...16
+			uint32_t WarningAIn1:		1;	//16
+			uint32_t WarningAIn2:		1;	//17
+			uint32_t WarningAIn3:		1;	//18
+			uint32_t WarningAIn4:		1;	//19
+			uint32_t WarningAIn5:		1;	//20
+			uint32_t WarningAIn6:		1;	//21
+			uint32_t Reserv1:				10;	//22...31
+		} st;
+		uint32_t ui32;
+	} AIn_Status_t;
+	//--------------------------------------------------------------------------//
+	typedef struct {
+		uint8_t ErrorDInLevel:	1;	//0
+		uint8_t ErrorDInChange:	1;	//1
+		uint8_t ErrorDInFreq:		1;	//2
+		uint8_t Reserv0:				5;	//3...7
+	} DIn_Status_t;
+	//--------------------------------------------------------------------------//
+	typedef union {
+		struct {
+			//DIn_Status_t DIn [_Mona_NumDIn];
+			uint8_t Reserv0;
+			uint8_t Reserv1;
+		} st;
+		uint32_t ui32;
+	} DInx_Status_t;

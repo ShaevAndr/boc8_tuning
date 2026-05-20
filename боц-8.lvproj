@@ -63,6 +63,7 @@
 		<Item Name="attenuator_dB.ctl" Type="VI" URL="../controls/attenuator_dB.ctl"/>
 		<Item Name="calculate_ampl_with_attenuator.vi" Type="VI" URL="../subVI/calculate_ampl_with_attenuator.vi"/>
 		<Item Name="dB_autoselector.vi" Type="VI" URL="../subVI/dB_autoselector.vi"/>
+		<Item Name="set_and_meas_RMS_with_attenuator.vi" Type="VI" URL="../subVI/set_and_meas_RMS_with_attenuator.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Convert UTF-8 to LV Text.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Tools/Unicode/Convert UTF-8 to LV Text.vi"/>
@@ -200,12 +201,12 @@
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="generator_set_values.vi" Type="VI" URL="../subVI/generator_set_values.vi"/>
 			<Item Name="select_scanner_channel.vi" Type="VI" URL="../subVI/select_scanner_channel.vi"/>
 			<Item Name="meas_voltmetr_with_scanner.vi" Type="VI" URL="../subVI/meas_voltmetr_with_scanner.vi"/>
 			<Item Name="frequency_aproximate.vi" Type="VI" URL="../subVI/frequency_aproximate.vi"/>
-			<Item Name="check_boc_rms_amplitude_char.vi" Type="VI" URL="../subVI/check_boc_rms_amplitude_char.vi"/>
 			<Item Name="assembly_amp_0dB_result.vi" Type="VI" URL="../assembly_amp_0dB_result.vi"/>
+			<Item Name="meas_all_BOC_RMS.vi" Type="VI" URL="../subVI/meas_all_BOC_RMS.vi"/>
+			<Item Name="cross_link_to_excel.vi" Type="VI" URL="../cross_link_to_excel.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Main Application" Type="EXE">
